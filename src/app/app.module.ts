@@ -6,7 +6,16 @@ import { AppComponent } from './app.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchstuddentComponent } from './searchstuddent/searchstuddent.component';
+import { RouterModule ,Routes} from '@angular/router';
 
+const appRoutes:Routes=[
+  {
+    path:"",component:AddstudentComponent
+  },
+  {
+    path:"search",component:SearchstuddentComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +25,8 @@ import { SearchstuddentComponent } from './searchstuddent/searchstuddent.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
